@@ -34,15 +34,54 @@ public class App
         }
 
         // criação de uma matriz
-        //int[][] t = new int[5][6];
+        int[][] t = new int[5][6];
         // System.out.println("t.length=" + t.length);
         // System.out.println("t[0].length=" + t[0].length);
-        /*for (int i = 0; i< t.length; i++) {
-            for (int j = 0; j < t[i].length; j++) {
-                t[i][j] = new Random().nextInt() % 500;
+        for (int index1 = 0; index1 < t.length; index1++) {
+            for (int j = 0; j < t[index1].length; j++) {
+                t[index1][j] = new Random().nextInt() % 500;
+                // System.out.println(t[index1][j]);
             }
-        }*/
+        }
+        for(int i = 0; i < t.length; i++) {
+            for (int j = 0; j < t[i].length; j++) {
+                System.out.print(t[i][j] + " ");
+            }
+            System.out.println();
+        }
+        for (int i = 0; i < t.length; i++) {
+            for (int j = 0; j < t[i].length - 1; j++) {
+                for (int k = j + 1; k < t[i].length; k++ ) {
+                    if (t[i][j] > t[i][k]) {
+                        int aux = t[i][j];
+                        t[i][j] = t[i][k];
+                        t[i][k] = aux;
+                    }
+                }
+            }
+            for(int j = 0; j < t[i].length; j++) {
+                for (int k = i + 1; k < t.length; k++) {
+                    for (int n = 0; n < t[k].length; n++) {
+                        if (t[i][j] > t[k][n]) {
+                            int aux = t[i][j];
+                            t[i][j] = t[k][n];
+                            t[k][n] = aux;
+                        }
+                    }
+                }
+            }
 
+
+        }
+        System.out.println();
+        for(int i = 0; i < t.length; i++) {
+            for (int j = 0; j < t[i].length; j++) {
+                System.out.print(t[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+/*
         int[] t = new int[5];
         for (int i = 0; i< t.length; i++) {
             t[i] = new Random().nextInt() % 500;
@@ -59,7 +98,7 @@ public class App
             }
         }
         Arrays.stream(t).forEach(s -> System.out.print(s + " "));
-
+*/
     }
 
 }
