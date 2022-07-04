@@ -10,16 +10,10 @@ public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Pessoa pessoa = new Pessoa();
-        System.out.println("Altura: ");
+        System.out.print("Altura: ");
         pessoa.setAltura(scanner.nextDouble());
-        System.out.println();
-        pessoa.setEndereco("Brasil");
-        EstadoCivil.printAll();
-        pessoa.setEstadoCivil(EstadoCivil.CASADO);
-        pessoa.setIdade(100);
-        pessoa.setNome("Pessoa bem velha");
-        pessoa.setPeso(100);
-        pessoa.setSexo(Sexo.MASCULINO);
+        EstadoCivil.whileEstadoCivilNotNull(scanner, pessoa);
+        System.out.println(pessoa.toString());
         scanner.close();
     }
 }

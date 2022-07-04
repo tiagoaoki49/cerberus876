@@ -67,4 +67,17 @@ public class Pessoa {
   public void setPeso(double peso) {
     this.peso = peso;
   }
+  @Override
+  public String toString() {
+    // TODO Auto-generated method stub
+    return "Pessoa{" +
+    "Nome da pessoa: " + nome +
+    ", Idade: " + idade + '\'' +
+    ", Altura: " + altura +
+    ", Endereço: " + endereco +
+    ", Peso: " + peso +
+    ", Sexo: " + sexo +
+    ", Estado civil: " + estadoCivil +
+    '}';
+  }
 }

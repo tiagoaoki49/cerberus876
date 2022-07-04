@@ -1,5 +1,9 @@
 package br.com.letscode.Models.enums;
 
+import java.util.Scanner;
+
+import br.com.letscode.Models.Pessoa;
+
 public enum EstadoCivil {
   SOLTEIRO(1),
   CASADO(2),
@@ -15,6 +19,24 @@ public enum EstadoCivil {
   static public void printAll() {
     for (EstadoCivil estadoCivil : EstadoCivil.values()) {
       System.out.println(estadoCivil.ordinal() + 1 + " " + estadoCivil.toString());
+    }
+  }
+
+  public static EstadoCivil setEstado(int estado) {
+    for (EstadoCivil estadoCivil : EstadoCivil.values()) {
+      if (estadoCivil.ordinal() == estado - 1) {
+        return estadoCivil;
+      }
+    }
+    return null;
+  }
+
+  public static void whileEstadoCivilNotNull(Scanner scanner, Pessoa pessoa) {
+    while (pessoa.getEstadoCivil() == null) {
+      System.out.println("Selecione o estado civil");
+      EstadoCivil.printAll();
+      int getEstadoCivil = scanner.nextInt();
+      pessoa.setEstadoCivil(EstadoCivil.setEstado(getEstadoCivil));
     }
   }
 
