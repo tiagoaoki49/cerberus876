@@ -1,10 +1,9 @@
 import java.math.BigDecimal;
 
-public class Conta {
+public class Transferencia {
     private BigDecimal saldo = new BigDecimal(0);
     private int conta = 0;
     private int agencia = 0;
-    private String titular;
 
     public void sacar(int age, int conta, BigDecimal valor){
         this.agencia = age;
@@ -15,7 +14,7 @@ public class Conta {
             System.out.println("saldo insuficiente");
         }
     }
-
+        
     public void depositar(int age, int conta, BigDecimal valor){
         this.agencia = age;
         this.conta = conta;
@@ -40,11 +39,5 @@ public class Conta {
     public void setAgencia(int agencia) {
         this.agencia = agencia;
     }
-    public String getTitular() {
-        return titular;
-    }
-
-    public void setTitular(String titular) {
-        this.titular = titular;
-    }
+    
 }
